@@ -1,0 +1,15 @@
+services:
+  easypersist:
+    image: easypersist:0.0.9
+    ports:
+      - "127.0.0.1:8080:8080"
+  easypersist-postgres:
+    image: postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+      LANG: en_US.utf8

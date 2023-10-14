@@ -10,13 +10,15 @@
 	</parent>
 	<groupId>de.moeri</groupId>
 	<artifactId>easypersist</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.9</version>
 	<name>easypersist</name>
-	<description>REST endpoints to accept to data that has to be persisted</description>
+	<description>REST endpoints to accept TO data that has to be persisted</description>
+
 	<properties>
 		<java.version>21</java.version>
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,6 +49,14 @@
 	</dependencies>
 
 	<build>
+
+	    <resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -68,7 +78,42 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>spring-boot</classifier>
+							<mainClass>
+								de.moeri.easypersist.EasypersistApplication
+							</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>local</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>
