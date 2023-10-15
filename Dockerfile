@@ -1,6 +1,6 @@
 FROM eclipse-temurin:21_35-jre-alpine
 
-ENV EASYPERSIST_VERSION 0.0.9
+ENV EASYPERSIST_VERSION 1.0.0
 
 COPY target/easypersist-${EASYPERSIST_VERSION}-spring-boot.jar easypersist.jar
 

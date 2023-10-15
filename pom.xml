@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>de.moeri</groupId>
 	<artifactId>easypersist</artifactId>
-	<version>0.0.9</version>
+	<version>1.0.0</version>
 	<name>easypersist</name>
 	<description>REST endpoints to accept TO data that has to be persisted</description>
 
@@ -46,6 +46,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -58,10 +64,6 @@
 		</resources>
 
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
