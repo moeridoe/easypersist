@@ -1,6 +1,6 @@
 # EASY PERSIST SERVICE APPLICATION
 
-This application is a proof of concept service to provide an easy way of persist incoming TOs using the MapStruct mapper
+This application is a proof of concept service to provide an easy way of persisting incoming TOs using the MapStruct mapper.
 
 ## Building from source
 
@@ -10,8 +10,6 @@ This application is a proof of concept service to provide an easy way of persist
 
 ## Usage
 
-There is one existing '/user' endpoint at port 8080, accepting POST requests with an json object having one "name" string field. The object will be stored in the databse.
+There is one existing '/user' endpoint at port 8080, accepting POST requests with an json object having one "name" string field. The object will be stored in the database.
 Example JSON:
-{
-"name": "John"
-}
+`{ "name": "John" }`
